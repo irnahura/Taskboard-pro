@@ -3,5 +3,5 @@ task board pro for college project
 npm install
 
 
-tech Stack : typescript , postgresql , zusturd , react and tailwind css
+tech Stack : typescript , postgresql , zustard , react , tailwind css and supabase
 
