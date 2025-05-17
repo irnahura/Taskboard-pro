@@ -15,7 +15,7 @@ const Dashboard = () => {
     if (!projectName.trim()) {
       messageApi.open({
         type: "warning",
-        content: "El nombre del proyecto no puede estar vacío.",
+        content: "The project name cannot be empty.",
       });
       return;
     }
@@ -27,33 +27,33 @@ const Dashboard = () => {
     if (error) {
       messageApi.open({
         type: "error",
-        content: "Error al agregar el proyecto.",
+        content: "Error adding the project.",
       });
       console.error(error);
     } else {
       messageApi.open({
         type: "success",
-        content: "Proyecto agregado exitosamente.",
+        content: "Project added successfully.",
       });
       setProjectName("");
-      queryClient.invalidateQueries({ queryKey: ["projects"] }); // Refrescar la lista de proyectos
+      queryClient.invalidateQueries({ queryKey: ["projects"] }); // Refresh the list of projects
     }
   };
 
-  if (isLoading) return <p>Cargando proyectos...</p>;
-  if (error) return <p>Error al cargar los proyectos: {error.message}</p>;
+  if (isLoading) return <p>Loading projects...</p>;
+  if (error) return <p>Error loading projects: {error.message}</p>;
 
   return (
     <div className="p-6">
       {contextHolder}
-      <h1 className="text-2xl font-bold">Tus Proyectos</h1>
+      <h1 className="text-2xl font-bold">Your Projects</h1>
       <Input
         value={projectName}
         onChange={(e) => setProjectName(e.target.value)}
-        placeholder="Nombre del proyecto"
+        placeholder="Project Name"
         onPressEnter={handleAddProject}
       />
-      <Button onClick={handleAddProject}>Crear Proyecto</Button>
+      <Button onClick={handleAddProject}>Add Project</Button>
 
       {projects?.map((project) => (
         <div key={project.id} className="mt-4">

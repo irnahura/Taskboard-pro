@@ -17,7 +17,7 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ projectId, isOpen, onClose 
         if (!taskTitle.trim()) {
             messageApi.open({
                 type: 'warning',
-                content: 'El título de la tarea no puede estar vacío',
+                content: 'The task title cannot be empty',
             })
             return
         }
@@ -27,7 +27,7 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ projectId, isOpen, onClose 
                 onSuccess: () => {
                     messageApi.open({
                         type: 'success',
-                        content: 'Tarea agregada exitosamente',
+                        content: 'Task added successfully',
                     })
                     setTaskTitle('');
                     onClose();
@@ -44,21 +44,21 @@ const AddTaskModal: React.FC<AddTaskModalProps> = ({ projectId, isOpen, onClose 
 
     return (
         <Modal
-            title="Agregar Nueva Tarea"
+            title="Add New Task"
             open={isOpen}
             onCancel={onClose}
             footer={[
                 <Button key="cancel" onClick={onClose}>
-                    Cancelar
+                    Cancel
                 </Button>,
                 <Button key="add" type="primary" onClick={handleAddTask}>
-                    Agregar
+                    Add
                 </Button>,
             ]}
         >
             {contextHolder}
             <Input
-                placeholder="Título de la Tarea"
+                placeholder="Task Title"
                 value={taskTitle}
                 onChange={(e) => setTaskTitle(e.target.value)}
                 onPressEnter={handleAddTask}

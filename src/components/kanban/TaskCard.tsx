@@ -11,7 +11,7 @@ interface TaskCardProps {
 const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   const moveTaskMutation = useMoveTask();
   const internalRef = useRef<HTMLDivElement>(null);
-  // 📌 Hacer que la tarjeta sea arrastrable con React DnD
+  // 📌 Make the card draggable with React DnD
   const [{ isDragging }, dragRef] = useDrag({
     type: "TASK",
     item: { id: task.id, status: task.status },
@@ -35,7 +35,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task }) => {
   
   return (
     <Card
-      ref={internalRef} // 
+      ref={internalRef} // 📌 Ref to the card element
       className="mb-2 shadow-md"
       style={{ opacity: isDragging ? 0.5 : 1 }}
     >

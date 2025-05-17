@@ -15,7 +15,7 @@ const KanbanBoard: React.FC<KanbanBoardProps> = ({ projectId, tasks }) => {
   return (
     <div>
       <Button type="primary" onClick={() => setIsModalOpen(true)}>
-        + Agregar Tarea
+        + Add Task
       </Button>
 
       <AddTaskModal

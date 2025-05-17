@@ -15,7 +15,7 @@ export const useAddTask = () => {
     mutationFn: ({ projectId, title }: { projectId: string; title: string }) =>
       addTask(projectId, title),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["projects"] }); // 🔄 Refrescar proyectos después de agregar una tarea
+      queryClient.invalidateQueries({ queryKey: ["projects"] }); // 🔄 Refresh projects after adding a task
     },
   });
 };
@@ -35,7 +35,7 @@ const moveTask = async (taskId: string, toStatus: "pending" | "in-progress" | "c
       mutationFn: ({ taskId, toStatus }: { taskId: string; toStatus: "pending" | "in-progress" | "completed"  }) =>
         moveTask(taskId, toStatus),
       onSuccess: () => {
-        queryClient.invalidateQueries({ queryKey: ["projects"] }); // 🔄 Refrescar proyectos después de mover una tarea
+        queryClient.invalidateQueries({ queryKey: ["projects"] }); // 🔄 Refresh projects after moving a task
       },
     });
   };

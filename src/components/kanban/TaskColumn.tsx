@@ -10,10 +10,10 @@ interface TaskColumnProps {
 
 const TaskColumn: React.FC<TaskColumnProps> = ({ status, projectId, tasks }) => {
   const internalRef = useRef<HTMLDivElement>(null);
-  // 📌 Configurar React DnD para permitir soltar tareas en esta columna
+  // 📌 Configure React DnD to allow dropping tasks in this column
   const [{ isOver }, dropRef] = useDrop({
     accept: "TASK",
-    drop: () => ({ status }), // 📌 Define a qué estado se moverá la tarea
+    drop: () => ({ status }), // 📌 Define which status the task will move to
     collect: (monitor) => ({
       isOver: monitor.isOver(),
     }),
@@ -21,7 +21,7 @@ const TaskColumn: React.FC<TaskColumnProps> = ({ status, projectId, tasks }) => 
   dropRef(internalRef);
   return (
     <div
-      ref={internalRef} // 📌 Hacer que la columna acepte drops
+        ref={internalRef} // 📌 Make the column accept drops
       className={`w-1/3 p-2 border rounded-md transition-all ${
         isOver ? "bg-gray-300" : "bg-gray-100"
       }`}
