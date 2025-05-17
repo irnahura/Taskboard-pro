@@ -1,58 +1,64 @@
-# Taskboard-pro
-TaskBoard Pro is a Kanban-style task management web application with drag-and-drop support, global state, and Supabase persistence. 
+# 📝 TaskBoard Pro
 
-🚀 Technologies Used
+TaskBoard Pro es una aplicación web de gestión de tareas estilo Kanban, con soporte de arrastrar y soltar, estado global y persistencia en Supabase.
 
-🎨 Frontend: React, Vite, TypeScript, Tailwind CSS, Ant Design
-🌍 Status: React Query, Zustand
-🔥 Backend: Supabase (PostgreSQL, Auth, Storage)
-🖱 Extras: React DnD for Drag & Drop, Optimistic UI, Dark Mode (in progress)
+## 🚀 Tecnologías utilizadas
+- 🎨 **Frontend**: React, Vite, TypeScript, Tailwind CSS, Ant Design
+- 🌍 **Estado**: React Query, Zustand
+- 🔥 **Backend**: Supabase (PostgreSQL, Auth, Storage)
+- 🖱 **Extras**: React DnD para Drag & Drop, Optimistic UI, Dark Mode (en progreso)
 
-📌 Main Features
+## 📌 Funcionalidades principales
+✔ **Gestión de proyectos y tareas**  
+✔ **Sistema de tablero Kanban con React DnD**  
+✔ **Persistencia de datos en Supabase**  
+✔ **Manejo de estado con React Query y Zustand**  
+✔ **Optimización de caché y sincronización automática con React Query**  
+✔ **Autenticación de usuarios (en progreso)**  
+✔ **Modo oscuro con Ant Design Tokens (en progreso)**  
 
-✔ Project and Task Management
-✔ Kanban Board System with React DnD
-✔ Data Persistence in Supabase
-✔ State Management with React Query and Zustand
-✔ Cache Optimization and Auto-Sync with React Query
-✔ User Authentication (in progress)
-✔ Dark Mode with Ant Design Tokens (in progress)
-🛠 Code Structure
+---
 
+## 🛠 Estructura del código
+```
 📦 src
-┣ 📂 components
-┃ ┣ 📂 kanban
-┃ ┃ ┣ 📜 KanbanBoard.tsx # Main board
-┃ ┃ ┣ 📜 TaskColumn.tsx # Board column (To Do, In Progress, etc.)
-┃ ┃ ┣ 📜 TaskCard.tsx # Individual task card
-┃ ┃ ┗ 📜 AddTaskModal.tsx # Modal for adding tasks
-┃ ┗ 📂 hooks
-┃ ┃ ┗ 📜 useProjects.ts # Hook for managing projects with React Query
-┃ ┗ 📂 store
-┃ ┃ ┗ 📜 useProjectStore.ts # Managing global state with Zustand
-┃ ┗ 📂 lib
-┃ ┃ ┣ 📜 supabaseClient.ts # Connecting to Supabase
-┃ ┃ ┗ 📜 reactQueryClient.ts # Configuring React Query
-┣ 📂 pages
-┃ ┗ 📜 Dashboard.tsx # Main page with projects
+ ┣ 📂 components
+ ┃ ┣ 📂 kanban
+ ┃ ┃ ┣ 📜 KanbanBoard.tsx    # Tablero principal
+ ┃ ┃ ┣ 📜 TaskColumn.tsx     # Columna del tablero (Pendiente, En Proceso, etc.)
+ ┃ ┃ ┣ 📜 TaskCard.tsx       # Tarjeta individual de tarea
+ ┃ ┃ ┗ 📜 AddTaskModal.tsx   # Modal para agregar tareas
+ ┃ ┗ 📂 hooks
+ ┃ ┃ ┗ 📜 useProjects.ts     # Hook para manejar proyectos con React Query
+ ┃ ┗ 📂 store
+ ┃ ┃ ┗ 📜 useProjectStore.ts # Manejo de estado global con Zustand
+ ┃ ┗ 📂 lib
+ ┃ ┃ ┣ 📜 supabaseClient.ts  # Conexión con Supabase
+ ┃ ┃ ┗ 📜 reactQueryClient.ts # Configuración de React Query
+ ┣ 📂 pages
+ ┃ ┗ 📜 Dashboard.tsx        # Página principal con proyectos
+```
 
-📌 Key methods in the code
+---
 
-fetchProjects() → Gets projects and their tasks from Supabase using React Query.
-addProject(name) → Adds a new project and syncs it with React Query.
-addTask(projectId, title) → Adds a task to a project in Supabase and updates the UI.
-moveTask(taskId, toStatus) → Change the status of a task and update the database.
+## 📌 Métodos clave en el código
+- `fetchProjects()` → Obtiene proyectos con sus tareas desde Supabase usando React Query.
+- `addProject(name)` → Agrega un nuevo proyecto y lo sincroniza con React Query.
+- `addTask(projectId, title)` → Añade una tarea a un proyecto en Supabase y actualiza la UI.
+- `moveTask(taskId, toStatus)` → Cambia el estado de una tarea y actualiza la base de datos.
 
-🔜 Next steps
+---
 
-End authentication with Google/Auth0 in Supabase
-Add notifications with Ant Design
-Optimize UI and UX
-Allow user collaboration on projects
+## 🔜 Próximos pasos
+- **Finalizar autenticación con Google/Auth0 en Supabase**  
+- **Agregar notificaciones con Ant Design**  
+- **Optimizar UI y UX**  
+- **Permitir colaboración entre usuarios en proyectos**  
 
-📜 Current status
+---
 
-The project works with project and task uploads from Supabase. Authentication and dark mode are being integrated.
-📎 Repository
+## 📜 Estado actual
+El proyecto funciona con carga de proyectos y tareas desde Supabase. Se está integrando autenticación y modo oscuro.
 
-🔗 GitHub - TaskBoard Pro
+## 📎 Repositorio
+🔗 [GitHub - TaskBoard Pro](https://github.com/tuusuario/taskboard-pro)
