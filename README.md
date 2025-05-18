@@ -14,7 +14,7 @@ TaskBoard Pro is a Kanban-style task management web application with drag-and-dr
 ✔ **Data Persistence in Supabase**
 ✔ **State Management with React Query and Zustand**
 ✔ **Cache Optimization and Automatic Sync with React Query**
-✔ **User Authentication (in progress)**
+✔ **User Authentication **
 ✔ **Dark Mode with Ant Design Tokens (in progress)**
 
 ---
